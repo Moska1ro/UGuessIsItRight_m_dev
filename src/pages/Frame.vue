@@ -42,37 +42,37 @@
       <v-list>
         <v-list-item
           prepend-icon="mdi-hexagon-multiple-outline"
-          title="序列预测"
+          title="function 1"
           :active="route.meta.name === 'classify'"
           @click="router.replace('/classify')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-api"
-          title="API预测"
+          title="function 2"
           :active="route.meta.name === 'auto'"
           @click="router.replace('/auto')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-history"
-          title="预测历史"
+          title="function 3"
           :active="route.meta.name === 'history'"
           @click="router.replace('/history')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-database-outline"
-          title="数据集管理"
+          title="function 4"
           :active="route.meta.name === 'datasets'"
           @click="router.replace('/datasets')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-graph-outline"
-          title="模型管理"
+          title="function 5"
           :active="route.meta.name === 'models'"
           @click="router.replace('/models')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-account-outline"
-          title="用户管理"
+          title="function 6"
           :active="route.meta.name === 'users'"
           @click="router.replace('/users')"
         ></v-list-item>
