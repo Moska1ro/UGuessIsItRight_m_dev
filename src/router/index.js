@@ -21,6 +21,9 @@ const router = createRouter({
         {
           path: '/',
           component: () => import('@/pages/Home.vue')
+        }, {
+          path: '/404',
+          component: () => import('@/pages/NotFound.vue')
         }
       ]
     },
@@ -37,7 +40,7 @@ router.beforeEach((to, from, next) => {
   const userInfo = useUserStore()
   if (userInfo.isLoggedin === true) {// 已登录
     if (to.path === '/login') {
-      next({ path: '/' });// 重复登录跳转到主页
+      next({ component: () => { import('@/pages/Home.vue') } });// 重复登录跳转到主页
     }
     else next();// 放行
   } else {

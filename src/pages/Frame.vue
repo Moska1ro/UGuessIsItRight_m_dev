@@ -44,37 +44,37 @@
           prepend-icon="mdi-hexagon-multiple-outline"
           title="我的作业"
           :active="route.meta.name === 'classify'"
-          @click="router.replace('/classify')"
+          @click="router.replace('/404')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-api"
           title="我的收藏"
           :active="route.meta.name === 'auto'"
-          @click="router.replace('/auto')"
+          @click="router.replace('/404')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-history"
           title="学情分析"
           :active="route.meta.name === 'history'"
-          @click="router.replace('/history')"
+          @click="router.replace('/404')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-database-outline"
           title="智能题库"
           :active="route.meta.name === 'datasets'"
-          @click="router.replace('/datasets')"
+          @click="router.replace('/404')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-graph-outline"
           title="function 5"
           :active="route.meta.name === 'models'"
-          @click="router.replace('/models')"
+          @click="router.replace('/404')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-account-outline"
           title="function 6"
           :active="route.meta.name === 'users'"
-          @click="router.replace('/users')"
+          @click="console.log(userInfo.isLoggedin)"
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
