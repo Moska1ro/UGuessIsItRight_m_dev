@@ -48,28 +48,33 @@
   <script setup>
   import { ref } from 'vue'
   import dialog from '@/plugins/dialog';
+  import { useUserStore } from '@/store/user';
+  import { useRouter } from 'vue-router';
   
+  
+  const userInfo = useUserStore()
+
+
   const loading = ref(false)
   const error = ref(false)
   const errMsg = ref('')
   
   const uid = ref('')
   const password = ref('')
-  
-  function login() {
+  const router = useRouter()
+  let login=()=> {
+    error.value = false
     loading.value = true
     if (!uid.value || !password.value) {
       errMsg.value = '请输入UID和密码'
       error.value = true
-      loading.value = false
-      return
+    }else if(uid.value === '1' && password.value === '1'){// 模拟登录，实际应经过axios，考虑后期加入token
+      userInfo.changeIsLoggedin()
+      router.push({path:'/'})
+    }else{
+      dialog.info('用户名或密码错误！')
     }
-    dialog.info("这是一个对话框", "这是对话框文本")
-
-    setTimeout(() => {
-      loading.value = false
-    }, 3000);
-  
+    loading.value = false
   }
   
   </script>

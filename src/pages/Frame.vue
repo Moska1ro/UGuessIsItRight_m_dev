@@ -26,7 +26,7 @@
                 </template>
                 <v-list-item-title>修改密码</v-list-item-title>
               </v-list-item>
-              <v-list-item link @click="1+1">
+              <v-list-item link @click="logout">
                 <template v-slot:prepend>
                   <v-icon icon="mdi-logout" size="medium"></v-icon>
                 </template>
@@ -90,10 +90,17 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useUserStore } from '@/store/user';
 
 const router = useRouter()
 const route = useRoute()
+const userInfo = useUserStore()
 
 const drawerShow = ref()
+
+let logout = ()=>{
+  userInfo.changeIsLoggedin();
+  router.push({path:'/login'})
+}
 
 </script>
