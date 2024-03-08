@@ -42,25 +42,25 @@
       <v-list>
         <v-list-item
           prepend-icon="mdi-hexagon-multiple-outline"
-          title="function 1"
+          title="我的作业"
           :active="route.meta.name === 'classify'"
           @click="router.replace('/classify')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-api"
-          title="function 2"
+          title="我的收藏"
           :active="route.meta.name === 'auto'"
           @click="router.replace('/auto')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-history"
-          title="function 3"
+          title="学情分析"
           :active="route.meta.name === 'history'"
           @click="router.replace('/history')"
         ></v-list-item>
         <v-list-item
           prepend-icon="mdi-database-outline"
-          title="function 4"
+          title="智能题库"
           :active="route.meta.name === 'datasets'"
           @click="router.replace('/datasets')"
         ></v-list-item>
