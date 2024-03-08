@@ -74,7 +74,7 @@
           prepend-icon="mdi-account-outline"
           title="function 6"
           :active="route.meta.name === 'users'"
-          @click="console.log(userInfo.isLoggedin)"
+          @click="console.log(userInfo.isLoggedin) // 测试用的" 
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
