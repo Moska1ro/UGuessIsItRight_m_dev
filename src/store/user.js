@@ -17,6 +17,7 @@ export const useUserStore = defineStore("user", {
         },
         changeIsLoggedin() {
             this.isLoggedin = !this.isLoggedin;
+            sessionStorage.isLoggedin = this.isLoggedin;
         }
     },
 })

@@ -1,10 +1,6 @@
 <template>
   <v-layout style="min-width: 800px">
-    <v-app-bar
-      density="comfortable"
-      color="secondary"
-      elevation="1"
-    >
+    <v-app-bar density="comfortable" color="secondary" elevation="1">
       <template v-slot:prepend>
         <v-app-bar-nav-icon @click="drawerShow = !drawerShow"></v-app-bar-nav-icon>
       </template>
@@ -14,13 +10,13 @@
           Administrator
           <v-menu activator="parent">
             <v-list density="compact" style="padding: 0;" rounded="sm">
-              <v-list-item link @click="1+1">
+              <v-list-item link @click="1 + 1">
                 <template v-slot:prepend>
                   <v-icon icon="mdi-cog-outline" size="medium"></v-icon>
                 </template>
                 <v-list-item-title>账户设置</v-list-item-title>
               </v-list-item>
-              <v-list-item link @click="1+1">
+              <v-list-item link @click="1 + 1">
                 <template v-slot:prepend>
                   <v-icon icon="mdi-lock-outline" size="medium"></v-icon>
                 </template>
@@ -40,42 +36,18 @@
 
     <v-navigation-drawer elevation="1" v-model="drawerShow">
       <v-list>
-        <v-list-item
-          prepend-icon="mdi-hexagon-multiple-outline"
-          title="我的作业"
-          :active="route.meta.name === 'classify'"
-          @click="router.replace('/404')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-api"
-          title="我的收藏"
-          :active="route.meta.name === 'auto'"
-          @click="router.replace('/404')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-history"
-          title="学情分析"
-          :active="route.meta.name === 'history'"
-          @click="router.replace('/404')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-database-outline"
-          title="智能题库"
-          :active="route.meta.name === 'datasets'"
-          @click="router.replace('/404')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-graph-outline"
-          title="function 5"
-          :active="route.meta.name === 'models'"
-          @click="router.replace('/404')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-account-outline"
-          title="function 6"
-          :active="route.meta.name === 'users'"
-          @click="console.log(userInfo.isLoggedin)" 
-        ></v-list-item>
+        <v-list-item prepend-icon="mdi-hexagon-multiple-outline" title="我的作业" :active="route.meta.name === 'classify'"
+          @click="router.replace('/404')"></v-list-item>
+        <v-list-item prepend-icon="mdi-api" title="我的收藏" :active="route.meta.name === 'auto'"
+          @click="router.replace('/404')"></v-list-item>
+        <v-list-item prepend-icon="mdi-history" title="学情分析" :active="route.meta.name === 'history'"
+          @click="router.replace('/404')"></v-list-item>
+        <v-list-item prepend-icon="mdi-database-outline" title="智能题库" :active="route.meta.name === 'datasets'"
+          @click="router.replace('/404')"></v-list-item>
+        <v-list-item prepend-icon="mdi-graph-outline" title="Chart Demo" :active="route.meta.name === 'models'"
+          @click="router.replace('/chartdemo')"></v-list-item>
+        <v-list-item prepend-icon="mdi-account-outline" title="function 6" :active="route.meta.name === 'users'"
+          @click="console.log(userInfo.isLoggedin)"></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -98,9 +70,9 @@ const userInfo = useUserStore()
 
 const drawerShow = ref()
 
-let logout = ()=>{
+let logout = () => {
   userInfo.changeIsLoggedin();
-  router.push({path:'/login'})
+  router.push({ path: '/login' })
 }
 
 </script>

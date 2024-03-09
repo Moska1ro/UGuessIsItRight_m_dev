@@ -7,7 +7,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-import { useUserStore } from '@/store/user';
+// import { useUserStore } from '@/store/user';
 
 
 
@@ -24,6 +24,9 @@ const router = createRouter({
         }, {
           path: '/404',
           component: () => import('@/pages/NotFound.vue')
+        }, {
+          path: '/chartdemo',
+          component: () => import('@/components/ChartDemo.vue')
         }
       ]
     },
@@ -37,8 +40,8 @@ const router = createRouter({
 
 
 router.beforeEach((to, from, next) => {
-  const userInfo = useUserStore()
-  if (userInfo.isLoggedin === true) {// 已登录
+  const loginState = sessionStorage.isLoggedin;
+  if (loginState === 'true') {// 已登录
     if (to.path === '/login') {
       next({ component: () => { import('@/pages/Home.vue') } });// 重复登录跳转到主页
     }
