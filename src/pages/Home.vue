@@ -3,8 +3,7 @@
     主页
   </div>
   <v-card elevation="3" class="pa-4">
-    阿巴阿巴阿巴<br>
-    啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<br>
+    xxxxx系统——教师端
   </v-card>
 </template>
 

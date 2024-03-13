@@ -27,6 +27,9 @@ const router = createRouter({
         }, {
           path: '/chartdemo',
           component: () => import('@/components/ChartDemo.vue')
+        }, {
+          path: '/myquestionset',
+          component: () => import('@/pages/MyQuestionSet.vue')
         }
       ]
     },
