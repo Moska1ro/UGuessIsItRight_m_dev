@@ -44,3 +44,14 @@ let getCourse = instance.get('/teacher/course', {
 ]).catch((err) => {
     //do sth
 })
+
+let getStudentList = instance.get('/teacher/student', {
+    params: {
+        courseid: 1
+    }
+}).then((res) => {
+    // do sth
+}).catch((err) => {
+    // do sth
+})
+

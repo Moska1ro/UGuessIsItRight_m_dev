@@ -15,7 +15,7 @@ onMounted(() => {
 
 const renderChart = () => {
     myChart = echarts.init(canvas.value);
-
+    // 
     myChart.setOption({
         title: {
             text: 'Echarts Demo'
