@@ -6,6 +6,7 @@
       </template>
       <v-app-bar-title><a style="cursor: pointer;" @click="router.replace('/')">系统的名字</a></v-app-bar-title>
       <template v-slot:append>
+        <UserMenuBtn />
         <v-btn class="text-none" variant="outlined">
           {{ userInfo.name }}
           <v-menu activator="parent">
@@ -60,17 +61,13 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/store/user'
+import UserMenuBtn from '@/components/UserMenuBtn.vue'
 
 const router = useRouter()
 const route = useRoute()
 const userInfo = useUserStore()
 
 const drawerShow = ref()
-
-let logout = () => {
-  userInfo.changeIsLoggedin();
-  router.push({ path: '/login' })
-}
 
 </script>
