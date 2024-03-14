@@ -22,9 +22,6 @@ const router = createRouter({
           path: '/',
           component: () => import('@/pages/Home.vue')
         }, {
-          path: '/404',
-          component: () => import('@/pages/NotFound.vue')
-        }, {
           path: '/chartdemo',
           component: () => import('@/components/ChartDemo.vue')
         }
@@ -36,7 +33,48 @@ const router = createRouter({
     },
     {
       path: '/student',
-      component: () => import('@/pages/student/Frame.vue')
+      component: () => import('@/pages/student/Frame.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/pages/student/course/Home.vue'),
+          meta: {
+            name: 'course'
+          }
+        },
+        {
+          path: 'course/:courseId',
+          component: () => import('@/pages/student/course/Course.vue'),
+          meta: {
+            name: 'course'
+          }
+        },
+        {
+          path: 'assignment',
+          component: () => import('@/pages/student/Assignment.vue'),
+          meta: {
+            name: 'assignment'
+          }
+        },
+        {
+          path: 'question',
+          component: () => import('@/pages/student/Question.vue'),
+          meta: {
+            name: 'question'
+          }
+        },
+        {
+          path: 'star',
+          component: () => import('@/pages/student/Star.vue'),
+          meta: {
+            name: 'star'
+          }
+        }
+      ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: () => import('@/pages/NotFound.vue')
     }
   ]
 })

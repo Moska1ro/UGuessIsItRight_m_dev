@@ -10,16 +10,16 @@
       </template>
     </v-app-bar>
 
-    <v-navigation-drawer elevation="1" v-model="drawerShow">
+    <v-navigation-drawer elevation="1" v-model="drawerShow" :width="180">
       <v-list>
-        <v-list-item prepend-icon="mdi-hexagon-multiple-outline" title="课程" :active="route.meta.name === 'classify'"
-          @click="router.replace('/404')"></v-list-item>
-        <v-list-item prepend-icon="mdi-api" title="作业" :active="route.meta.name === 'auto'"
-          @click="router.replace('/404')"></v-list-item>
-        <v-list-item prepend-icon="mdi-history" title="题库" :active="route.meta.name === 'history'"
-          @click="router.replace('/404')"></v-list-item>
-        <v-list-item prepend-icon="mdi-database-outline" title="收藏" :active="route.meta.name === 'datasets'"
-          @click="router.replace('/404')"></v-list-item>
+        <v-list-item prepend-icon="mdi-briefcase-variant-outline" title="课程" :active="route.meta.name === 'course'"
+          @click="router.replace('/student')"></v-list-item>
+        <v-list-item prepend-icon="mdi-book-edit-outline" title="作业" :active="route.meta.name === 'assignment'"
+          @click="router.replace('/student/assignment')"></v-list-item>
+        <v-list-item prepend-icon="mdi-dumbbell" title="题库" :active="route.meta.name === 'question'"
+          @click="router.replace('/student/question')"></v-list-item>
+        <v-list-item prepend-icon="mdi-star-outline" title="收藏" :active="route.meta.name === 'star'"
+          @click="router.replace('/student/star')"></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
