@@ -4,7 +4,7 @@
       <template v-slot:prepend>
         <v-app-bar-nav-icon @click="drawerShow = !drawerShow"></v-app-bar-nav-icon>
       </template>
-      <v-app-bar-title><a style="cursor: pointer;" @click="router.replace('/')">学生端</a></v-app-bar-title>
+      <v-app-bar-title><a style="cursor: pointer;" @click="router.replace('/student')">学生端</a></v-app-bar-title>
       <template v-slot:append>
         <UserMenuBtn />
       </template>

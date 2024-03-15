@@ -44,9 +44,12 @@ let login = () => {
   if (!uid.value || !password.value) {
     errMsg.value = '请输入UID和密码'
     error.value = true
+  } else if (uid.value === '0' && password.value === '0') {// 模拟登录，实际应经过axios，考虑后期加入token
+    userInfo.login(0);
+    router.push({ path: '/teacher' })
   } else if (uid.value === '1' && password.value === '1') {// 模拟登录，实际应经过axios，考虑后期加入token
-    userInfo.changeIsLoggedin()
-    router.push({ path: '/' })
+    userInfo.login(1);
+    router.push({ path: '/student' })
   } else {
     dialog.info('用户名或密码错误！')
   }
